@@ -174,5 +174,5 @@ with ko2:
 
 st.caption('Copyright (c)')
 
-!streamlit run dashboard.py & npx localtunnel --port 8501
+# !streamlit run dashboard.py & npx localtunnel --port 8501
 
