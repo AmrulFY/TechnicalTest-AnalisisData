@@ -121,12 +121,12 @@ with kolom1:
     colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
     explode = (0.1, 0, 0, 0)
 
-    plt.pie(sizes, explode=explode, labels=labels, colors=colors,
-        autopct='%1.1f%%', shadow=True, startangle=140)
-
-    plt.axis('equal')
+    fig, ax = plt.subplots()
+    ax.pie(sizes, explode=explode, labels=labels, colors=colors,
+       autopct='%1.1f%%', shadow=True, startangle=140)
+    ax.axis('equal')
     plt.title('Tingkat Kepuasan Pelanggan')
-    st.pyplot(plt)
+    st.pyplot(fig)
 
 with kolom2:
     total_fp = df["FAKTOR_PROBLEM"].nunique()
