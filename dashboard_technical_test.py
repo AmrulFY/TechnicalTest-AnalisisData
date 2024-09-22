@@ -125,14 +125,14 @@ with kolom1:
     ax.pie(sizes, explode=explode, labels=labels, colors=colors,
        autopct='%1.1f%%', shadow=True, startangle=140)
     ax.axis('equal')
-    plt.title('Korelasi Waktu Penyelesaian Masalah dengan Tingkat Kepuasan')
+    plt.title('Tingkat Kepuasan Pelanggan')
     st.pyplot(fig)
 
 with kolom2:
     plt.figure(figsize=(10, 6))
     correlation = df[['WAKTU_PENYELESAIAN', 'TINGKAT_KEPUASAN']].corr()
     sns.heatmap(correlation, annot=True)
-    plt.title('Tingkat Kepuasan Pelanggan')
+    plt.title('Korelasi Waktu Penyelesaian Masalah dengan Tingkat Kepuasan')
     st.pyplot(plt)
 
 st.subheader("Distribusi Tingkat Kepuasan Berdasarkan Faktor Masalah")
