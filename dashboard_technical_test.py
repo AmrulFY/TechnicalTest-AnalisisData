@@ -111,7 +111,7 @@ plt.xlabel('Frekuensi', fontsize=12)
 plt.ylabel('Faktor Masalah', fontsize=12)
 st.pyplot(plt)
 
-st.subheader("Analisis Tingkat Kepuasan dan Pengaruh Faktor Masalah Terhadap Tingkat Kepuasan")
+st.subheader("Analisis Tingkat Kepuasan dan Korelasi Waktu Penyelesaian Masalah dengan Tingkat Kepuasan")
 
 kolom1, kolom2 = st.columns(2)
 
@@ -129,8 +129,12 @@ with kolom1:
     st.pyplot(fig)
 
 with kolom2:
-    total_fp = df["FAKTOR_PROBLEM"].nunique()
-    st.metric("FAKTOR_PROBLEM", value=total_fp)
+    plt.figure(figsize=(10, 6))
+    correlation = df[['WAKTU_PENYELESAIAN', 'TINGKAT_KEPUASAN']].corr()
+    sns.heatmap(correlation, annot=True)
+    st.pyplot(plt)
+
+st.subheader("Distribusi Tingkat Kepuasan Berdasarkan Faktor Masalah")
 
 plt.figure(figsize=(12, 8))
 
@@ -141,11 +145,6 @@ plt.xlabel('Tingkat Kepuasan', fontsize=12)
 plt.ylabel('Faktor Masalah', fontsize=12)
 st.pyplot(plt)
 
-st.subheader("Korelasi Waktu Penyelesaian Masalah dengan Tingkat Kepuasan")
-plt.figure(figsize=(10, 6))
-correlation = df[['WAKTU_PENYELESAIAN', 'TINGKAT_KEPUASAN']].corr()
-sns.heatmap(correlation, annot=True)
-st.pyplot(plt)
 
 st.subheader("Perbandingan Rata-Rata Tingkat Kepuasan Berdasarkan Wilayah dan Divisi")
 ko1, ko2 = st.columns(2)
