@@ -18,7 +18,7 @@ import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
 from matplotlib.colors import TwoSlopeNorm
-sns.set(style='light')
+sns.set(style='white')
 
 df = pd.read_csv("https://raw.githubusercontent.com/AmrulFY/TechnicalTest-AnalisisData/refs/heads/main/dataset_final.csv")
 
