@@ -23,7 +23,7 @@ sns.set(style='dark')
 df = pd.read_csv("https://raw.githubusercontent.com/AmrulFY/TechnicalTest-AnalisisData/refs/heads/main/dataset_final.csv")
 
 with st.sidebar:
-    st.image("https://github.com/AmrulFY/TechnicalTest-AnalisisData/blob/929cbfe54b1c4a2c37a65f456776d7099c3de3ad/logo_alfa.png")
+    st.image("https://raw.githubusercontent.com/AmrulFY/TechnicalTest-AnalisisData/refs/heads/main/logo_alfa.png")
 
     st.sidebar.title("Filter Data")
     selected_wilayah = st.sidebar.multiselect("Pilih Nama Cabang",
