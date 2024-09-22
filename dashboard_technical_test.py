@@ -18,7 +18,7 @@ import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
 from matplotlib.colors import TwoSlopeNorm
-sns.set(style='dark')
+sns.set(style='light')
 
 df = pd.read_csv("https://raw.githubusercontent.com/AmrulFY/TechnicalTest-AnalisisData/refs/heads/main/dataset_final.csv")
 
@@ -78,7 +78,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     plt.figure(figsize=(10, 6))
-    sns.histplot(df['WAKTU_PENYELESAIAN'], bins=30, kde=True, color='skyblue')
+    sns.histplot(df['WAKTU_PENYELESAIAN'], bins=30, kde=True, color='navy')
 
     plt.title('Distribusi Waktu Penyelesaian Masalah', fontsize=16)
     plt.xlabel('Waktu Penyelesaian (hari)', fontsize=12)
@@ -92,7 +92,7 @@ with col2:
     df1 = (pd.cut(df['WAKTU_PENYELESAIAN'], bins=batas_bin_wp, labels=kategori_wp)).copy()
 
     plt.figure(figsize=(10, 6))
-    sns.histplot(df1, bins=30, kde=True, color='skyblue')
+    sns.histplot(df1, bins=30, kde=True, color='navy')
 
     plt.title('Distribusi Waktu Penyelesaian Masalah (Setelah Proses Binning)', fontsize=16)
     plt.xlabel('Range (hari)', fontsize=12)
